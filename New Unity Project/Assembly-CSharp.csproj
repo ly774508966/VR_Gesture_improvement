@@ -301,6 +301,8 @@
      <Compile Include="Assets\scrips_tetris\fall.cs" />
      <Compile Include="Assets\scrips_tetris\moveleft.cs" />
      <Compile Include="Assets\scrips_tetris\moveright.cs" />
+     <Compile Include="Assets\scrips_tetris\restart.cs" />
+     <Compile Include="Assets\scrips_tetris\restartm.cs" />
      <Compile Include="Assets\scrips_tetris\rotate.cs" />
      <Compile Include="Assets\test1.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />

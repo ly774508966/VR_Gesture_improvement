@@ -19,11 +19,12 @@ public class moveleft : MonoBehaviour {
 			//TODO:
 			Group group = FindObjectOfType<Group>();
 			group.gameObject.SendMessage("moveLeft");
-			//Debug.Log(cname + " is Clicked");
+
 		}
 	}
 	void OnTriggerExit(Collider _other){
 		if (other == _other) {
+			other = _other;
 			other = null;
 		}
 	}

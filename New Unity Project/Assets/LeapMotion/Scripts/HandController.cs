@@ -54,7 +54,7 @@ public class HandController : MonoBehaviour {
   public bool isHeadMounted = false;
   /** Reverses the z axis. */
   public bool mirrorZAxis = false;
-
+  
   /** If hands are in charge of Destroying themselves, make this false. */
   public bool destroyHands = true;
 
@@ -187,7 +187,7 @@ public class HandController : MonoBehaviour {
     for (int h = 0; h < num_hands; ++h) {
       Hand leap_hand = leap_hands[h];
       
-      HandModel model = (mirrorZAxis != leap_hand.IsLeft) ? left_model : right_model;
+			HandModel model = (mirrorZAxis != leap_hand.IsLeft) ? left_model : right_model;
 
       // If we've mirrored since this hand was updated, destroy it.
       if (all_hands.ContainsKey(leap_hand.Id) &&

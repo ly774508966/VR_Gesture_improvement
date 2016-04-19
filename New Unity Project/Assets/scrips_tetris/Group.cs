@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Group : MonoBehaviour {
 	float lastFall =0;
@@ -7,25 +8,31 @@ public class Group : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+
 	// Update is called once per frame
 	void Update() {
 		// Move Left
-		if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+		if (Input.GetKeyDown (KeyCode.LeftArrow)) {
 			moveLeft ();
 		}
 		// Move Right
-		else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+		else if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			moveRight ();
 		}
 		// Rotate
-		else if (Input.GetKeyDown(KeyCode.UpArrow)) {
+		else if (Input.GetKeyDown (KeyCode.UpArrow)) {
 			Rotate ();
 		}
 		// Fall
-		else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+		else if (Input.GetKeyDown (KeyCode.DownArrow)) {
 			Fall ();
+		} 
+		//restart
+		else if (Input.GetKeyDown (KeyCode.UpArrow)) {
+			restart ();
 		}
+	
+
 		// Move Downwards and Fall
 		else if (Input.GetKeyDown(KeyCode.DownArrow) ||
 			Time.time - lastFall >= 1) {
@@ -82,6 +89,10 @@ public class Group : MonoBehaviour {
 			Grid.grid[(int)v.x, (int)v.y] = child;
 		}        
 	}
+	public void restart(){
+		SceneManager.LoadScene ("Tetris 1");
+	}
+
 	public  void moveLeft(){
 		// Modify position
 		transform.position += new Vector3 (-1, 0, 0);
@@ -140,4 +151,5 @@ public class Group : MonoBehaviour {
 			enabled = false;
 		}
 		}
+
 }
